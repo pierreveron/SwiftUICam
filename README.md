@@ -15,8 +15,7 @@ Configuring a Camera View Controller in AVFoundation can be tedious and time con
 | ------------------------------------- | ---------------------
 | :sunglasses:                  | Snapchat-style media capture                              
 | :camera:  						  | Image capture               
-| :movie_camera:  			      | Video capture                
-| :chart_with_upwards_trend:    | Manual image quality settings                
+| :movie_camera:  			      | Video capture                               
 | :tada:                        | Front and rear camera support              
 | :flashlight:                  | Front and rear flash  
 | :sunny:                       | Retina flash support               
