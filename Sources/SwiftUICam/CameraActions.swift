@@ -27,6 +27,7 @@ extension CameraActions {
             events.didAskToRotateCamera = true
         }
     }
+    
     func rotateCamera(events: UserEvents) {
         events.didAskToRotateCamera = true
     }

@@ -44,7 +44,7 @@ public class CameraViewController: UIViewController {
     // MARK: Public Variable Declarations
     
     /// Public Camera Delegate for the Custom View Controller Subclass
-    public var delegate: SwiftUICamDelegate?
+    public var delegate: CameraViewControllerDelegate?
     
     /// Maximum video duration if SwiftyCamButton is used
     public var maximumVideoDuration: Double = 10.0

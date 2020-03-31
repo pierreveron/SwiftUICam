@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-// MARK: CameraViewRepresentable
-public struct CameraViewRepresentable: UIViewControllerRepresentable {
+// MARK: CameraView
+public struct CameraView: UIViewControllerRepresentable {
     @ObservedObject var events: UserEvents
     //To enable call to updateUIView() on change of UserEvents() bc there is a bug
     class RandomClass { }
@@ -52,11 +52,11 @@ public struct CameraViewRepresentable: UIViewControllerRepresentable {
     }
     
     // MARK: Coordinator
-    public class Coordinator: NSObject, SwiftUICamDelegate {
+    public class Coordinator: NSObject, CameraViewControllerDelegate {
         
-        var parent: CameraViewRepresentable
+        var parent: CameraView
         
-        init(_ parent: CameraViewRepresentable) {
+        init(_ parent: CameraView) {
             self.parent = parent
         }
         
@@ -81,11 +81,11 @@ public struct CameraViewRepresentable: UIViewControllerRepresentable {
             }
             
         public func didFinishProcessingPhoto(_ image: UIImage) {
-                //Nothing to do yet
+                //Not yet implemented
             }
             
         public func didFinishSavingWithError(_ image: UIImage, error: NSError?, contextInfo: UnsafeRawPointer) {
-                //Nothing to do yet
+                //Not yet implemented
             }
             
         public func didChangeZoomLevel(_ zoom: CGFloat) {
@@ -106,7 +106,7 @@ public struct CameraViewRepresentable: UIViewControllerRepresentable {
                 print("Video recording finished")
             }
             
-            func didSavePhoto() {
+        public func didSavePhoto() {
                 print("Save photo to library")
             }
             
