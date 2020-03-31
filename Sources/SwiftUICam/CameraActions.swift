@@ -32,6 +32,6 @@ extension CameraActions {
     }
     
     func changeFlashMode(events: UserEvents) {
-        events.didAskToChangeFlashMode
+        events.didAskToChangeFlashMode = true
     }
 }
