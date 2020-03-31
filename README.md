@@ -77,3 +77,27 @@ struct ContentView: View {
 }
 
 ```
+
+### Capture
+
+Add an @ObservedObject UserEvents that will be pass to the interface and the CameraViewRepresentable like this:
+
+```
+import SwiftUI
+import SwiftUICam
+
+struct ContentView: View {
+    @ObservedObject events = UserEvents()
+    var body: some View {
+    	ZStack {
+              CameraViewRepresentable(events: events)
+	      InterfaceView(events: events)
+    	}
+    }
+}
+
+```
+
+Make your interface view conform to the CameraActions protocol and add the @ObservedObject UserEvents property.
+Add gestures to your buttons that call the CameraActions functions and pass them the UserEvents property, simply as that.
+
