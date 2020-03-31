@@ -1,5 +1,5 @@
 //
-//  CameraViewRepresentable.swift
+//  CameraView.swift
 //  SwiftUICam
 //
 //  Created by Pierre Véron on 31.03.20.

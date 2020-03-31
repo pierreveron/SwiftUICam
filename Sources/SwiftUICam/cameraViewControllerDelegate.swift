@@ -1,5 +1,5 @@
 //
-//  SwiftUICamDelegate.swift
+//  CameraViewControllerDelegate.swift
 //  SwiftUICam
 //
 //  Created by Pierre Véron on 30.03.20.
@@ -7,7 +7,7 @@
 //
 import UIKit
 
-public protocol SwiftUICamDelegate {
+public protocol CameraViewControllerDelegate {
 //    func cameraAccessGranted()
 //    func cameraAccessDenied()
     func noCameraDetected()
