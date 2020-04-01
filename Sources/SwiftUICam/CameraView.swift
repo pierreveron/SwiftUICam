@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 // MARK: CameraView
 public struct CameraView: UIViewControllerRepresentable {
@@ -15,17 +16,44 @@ public struct CameraView: UIViewControllerRepresentable {
     class RandomClass { }
     let x = RandomClass()
     
+    private var applicationName: String
+    private var preferredStartingCameraType: AVCaptureDevice.DeviceType
+    private var preferredStartingCameraPosition: AVCaptureDevice.Position
+    
     private var focusImage: String?
     
-    public init(events: UserEvents, focusImage: String? = nil) {
+    private var pinchToZoom: Bool
+    private var tapToFocus: Bool
+    private var doubleTapCameraSwitch: Bool
+    
+    public init(events: UserEvents, applicationName: String, preferredStartingCameraType: AVCaptureDevice.DeviceType = .builtInWideAngleCamera, preferredStartingCameraPosition: AVCaptureDevice.Position = .back, focusImage: String? = nil, pinchToZoom: Bool = true, tapToFocus: Bool = true, doubleTapCameraSwitch: Bool = true) {
         self.events = events
+        
+        self.applicationName = applicationName
+        
         self.focusImage = focusImage
+        self.preferredStartingCameraType = preferredStartingCameraType
+        self.preferredStartingCameraPosition = preferredStartingCameraPosition
+        
+        self.pinchToZoom = pinchToZoom
+        self.tapToFocus = tapToFocus
+        self.doubleTapCameraSwitch = doubleTapCameraSwitch
     }
     
     public func makeUIViewController(context: Context) -> CameraViewController {
         let cameraViewController = CameraViewController()
         cameraViewController.delegate = context.coordinator
+        
+        cameraViewController.applicationName = applicationName
+        cameraViewController.preferredStartingCameraType = preferredStartingCameraType
+        cameraViewController.preferredStartingCameraPosition = preferredStartingCameraPosition
+        
         cameraViewController.focusImage = focusImage
+        
+        cameraViewController.pinchToZoom = pinchToZoom
+        cameraViewController.tapToFocus = tapToFocus
+        cameraViewController.doubleTapCameraSwitch = doubleTapCameraSwitch
+        
         return cameraViewController
     }
     

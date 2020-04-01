@@ -43,6 +43,13 @@ public class PreviewView: UIView {
 public class CameraViewController: UIViewController {
     // MARK: Public Variable Declarations
     
+    /// Name of the application using the camera
+    public var applicationName: String?
+    
+    public var preferredStartingCameraType: AVCaptureDevice.DeviceType?
+    
+    public var preferredStartingCameraPosition: AVCaptureDevice.Position?
+    
     /// Public Camera Delegate for the Custom View Controller Subclass
     public var delegate: CameraViewControllerDelegate?
     
@@ -218,16 +225,11 @@ public class CameraViewController: UIViewController {
                 self.isSessionRunning = self.session.isRunning
                 
             case .notAuthorized:
-                //                if self.shouldPrompToAppSettings == true {
-                //                    self.promptToAppSettings()
-                //                } else {
-                //                    self.delegate?.swiftyCamNotAuthorized(self)
-                //                }
                 DispatchQueue.main.async {
-                    let changePrivacySetting = "SwifUICam doesn't have permission to use the camera, please change privacy settings"
+                    let changePrivacySetting = "\(self.applicationName!) doesn't have permission to use the camera, please change privacy settings"
                     let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
                     
-                    let alertController = UIAlertController(title: "SwifUICam", message: message, preferredStyle: .alert)
+                    let alertController = UIAlertController(title: self.applicationName!, message: message, preferredStyle: .alert)
                     
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
                                                             style: .cancel,
@@ -251,7 +253,7 @@ public class CameraViewController: UIViewController {
                 DispatchQueue.main.async {
                     let alertMsg = "Alert message when something goes wrong during capture session configuration"
                     let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
-                    let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+                    let alertController = UIAlertController(title: self.applicationName!, message: message, preferredStyle: .alert)
                     
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
                                                             style: .cancel,
@@ -312,8 +314,9 @@ public class CameraViewController: UIViewController {
             var defaultVideoDevice: AVCaptureDevice?
             
             // Choose the back dual camera, if available, otherwise default to a wide angle camera.
-            
-            if let dualCameraDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) {
+            if let preferredCameraDevice = AVCaptureDevice.default(preferredStartingCameraType!, for: .video, position: preferredStartingCameraPosition!) {
+                defaultVideoDevice = preferredCameraDevice
+            } else if let dualCameraDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) {
                 defaultVideoDevice = dualCameraDevice
             } else if let backCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) {
                 // If a rear dual camera is not available, default to the rear wide angle camera.
@@ -679,7 +682,7 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
                         creationRequest.addResource(with: .video, fileURL: outputFileURL, options: options)
                     }, completionHandler: { success, error in
                         if !success {
-                            print("AVCam couldn't save the movie to your photo library: \(String(describing: error))")
+                            print("\(self.applicationName!) couldn't save the movie to your photo library: \(String(describing: error))")
                         }
                         cleanup()
                     }
