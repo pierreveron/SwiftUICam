@@ -90,7 +90,7 @@ struct ContentView: View {
     @ObservedObject events = UserEvents()
     var body: some View {
     	ZStack {
-              CameraViewRepresentable(events: events)
+              CameraView(events: events)
 	      InterfaceView(events: events)
     	}
     }
@@ -101,3 +101,9 @@ struct ContentView: View {
 Make your interface view conform to the CameraActions protocol and add the @ObservedObject UserEvents property.
 Add gestures to your buttons that call the CameraActions functions and pass them the UserEvents property, simply as that.
 
+
+## What's next
+
+- Add support for the device orientation
+- Add background audio support
+- Wait for Apple to release an update of SwiftUI to maybe make it simplier to use AVFoundation
