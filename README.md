@@ -88,16 +88,20 @@ Add gestures to your buttons that call the CameraActions functions and pass them
 
 You can modify several properties of the CameraView on its initialization:
 
-        - preferredStartingCameraType
-        - preferredStartingCameraPosition
-        - pinchToZoom
-        - tapToFocus
-	- focusImage
-        - doubleTapCameraSwitch
+- preferredStartingCameraType
+- preferredStartingCameraPosition
+- pinchToZoom
+- tapToFocus
+- focusImage
+- doubleTapCameraSwitch
+
+### Preferred Starting Options
+
+By default, CameraView will launch to the back wide angle camera if it is available. This can be changed by changing the `preferredStartingCameraType` and the `preferredStartingCameraPosition`properties to your desired ones.
 
 ### TapToFocus
 
-CameraView, by default, support tap to focus on the video preview. To disable this feature, pass the `tapToFocus` property `false`.
+CameraView, by default, support tap to focus on the video preview. To disable this feature, pass to the `tapToFocus` property `false`.
 
 #### FocusImage
 
@@ -105,11 +109,12 @@ When tapToFocus is enable, you can pass an UIImage that will be animate on the t
 
 ### PinchToZoom
 
-CameraView, by default, support pinchToZoom on the front and back camera. The gestures work similar to the default iOS app and will zoom to the maximum supported zoom level. To disable this feature, pass the `pinchToZoom` property `false`.
+CameraView, by default, support pinchToZoom on the front and back camera. The gestures work similar to the default iOS app and will zoom to the maximum supported zoom level. To disable this feature, pass to the `pinchToZoom` property `false`.
 
 ### DoubleTapCameraSwitch
 
-By default, CameraView will launch to the back camera. This can be changed by changing the `preferredStartingCameraPosition` to your desired one.
+CameraView, by default, support double tap to switch camera. To disable this feature, pass to the `doubleTapCameraSwitch` property `false`.
+
 
 ## What's next
 
