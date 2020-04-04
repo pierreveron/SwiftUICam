@@ -9,6 +9,8 @@ If you want to have a custom camera using SwiftUI and not using the UIPickerCont
 
 SwiftUICam gives you a simple full screen Snapchat-style Camera View. Then, it is your job to built the interface you want and to connect it to the Camera View.
 
+that gives a realtime view of the iPhone camera
+
 ## Features
 
 |                              | SwiftUICam        
@@ -88,13 +90,28 @@ Add gestures to your buttons that call the CameraActions functions and pass them
 
 You can modify several properties of the CameraView on its initialization:
 
-        -focusImage
-        -preferredStartingCameraType
-        -preferredStartingCameraPosition
-        -pinchToZoom
-        -tapToFocus
-        -doubleTapCameraSwitch
+        - preferredStartingCameraType
+        - preferredStartingCameraPosition
+        - pinchToZoom
+        - tapToFocus
+	- focusImage
+        - doubleTapCameraSwitch
 
+### TapToFocus
+
+CameraView, by default, support tap to focus on the video preview. To disable this feature, pass the `tapToFocus` property `false`.
+
+#### FocusImage
+
+When tapToFocus is enable, you can pass an image that will be animate on the tap point.
+
+### PinchToZoom
+
+CameraView, by default, support pinchToZoom on the front and back camera. The gestures work similar to the default iOS app and will zoom to the maximum supported zoom level. To disable this feature, pass the `pinchToZoom` property `false`.
+
+### DoubleTapCameraSwitch
+
+By default, CameraView will launch to the back camera. This can be changed by changing the `preferredStartingCameraPosition` to your desired one.
 
 ## What's next
 
