@@ -5,9 +5,9 @@
 
 # SwiftUICam
 
-SwiftUICam is a a simple, Snapchat-style iOS Camera framework for easy photo and video capture. SwiftUICam allows users to capture both photos and videos from the same session with very little configuration.
+If you want to have a custom camera using SwiftUI and not using the UIPickerController that will display the original iOS camera, but don’t have time to play with AVFoundation, this package is for you!
 
-Configuring a Camera View Controller in AVFoundation can be tedious and time consuming, specially with SwiftUI. SwiftUICam is a drop in View which gives complete control of the AVSession.
+SwiftUICam gives you a simple full screen Snapchat-like Camera View. Then, it is your job to built the interface you want and to connect it to the Camera View.
 
 ## Features
 
@@ -25,6 +25,10 @@ Configuring a Camera View Controller in AVFoundation can be tedious and time con
 ## Requirements
 
 iOS 13.0+
+
+## Credits
+
+It’s inspired by the project SwiftyCam made for UIKit: https://github.com/Awalz/SwiftyCam
 
 ## Installation
 
