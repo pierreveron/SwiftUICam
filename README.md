@@ -7,9 +7,7 @@
 
 If you want to have a custom camera using SwiftUI and not using the UIPickerController that will display the original iOS camera, but don’t have time to play with AVFoundation, this package is for you!
 
-SwiftUICam gives you a simple full screen Snapchat-style Camera View. Then, it is your job to built the interface you want and to connect it to the Camera View.
-
-that gives a realtime view of the iPhone camera
+SwiftUICam gives you a realtime full screen Snapchat-style view of the iPhone camera. Then, it is your job to built the interface you want and to connect it to the Camera View.
 
 ## Features
 
