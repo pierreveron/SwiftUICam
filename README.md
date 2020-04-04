@@ -130,9 +130,9 @@ You can modify several properties of the CameraView on its initialization:
 
 - preferredStartingCameraType
 - preferredStartingCameraPosition
-- pinchToZoom
 - tapToFocus
 - focusImage
+- pinchToZoom
 - doubleTapCameraSwitch
 
 ### Preferred Starting Options
