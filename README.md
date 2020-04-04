@@ -89,10 +89,12 @@ Add gestures to your buttons that call the CameraActions functions and pass them
 
 It is the protocol that order the camera to take a picture or change the flash mode. List of the methods:
 
-- func takePhoto(events: UserEvents)
-- func toggleVideoRecording(events: UserEvents)
-- func rotateCamera(events: UserEvents)
-- func changeFlashMode(events: UserEvents)
+```swift
+func takePhoto(events: UserEvents)
+func toggleVideoRecording(events: UserEvents)
+func rotateCamera(events: UserEvents)
+func changeFlashMode(events: UserEvents)
+```
 
 The methods have a default definition to take make it easy to use.
 
