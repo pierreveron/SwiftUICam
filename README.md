@@ -7,7 +7,7 @@
 
 If you want to have a custom camera using SwiftUI and not using the UIPickerController that will display the original iOS camera, but don’t have time to play with AVFoundation, this package is for you!
 
-SwiftUICam gives you a simple full screen Snapchat-like Camera View. Then, it is your job to built the interface you want and to connect it to the Camera View.
+SwiftUICam gives you a simple full screen Snapchat-style Camera View. Then, it is your job to built the interface you want and to connect it to the Camera View.
 
 ## Features
 
@@ -62,29 +62,7 @@ As of iOS 10, Apple requires the additon of the `NSCameraUsageDescription` and `
 
 ### Getting Started:
 
-In your SwiftUI view simply add it in like you would any other view.
-
-Here's an example adding it to a simple view called `ContentView`
-
-```
-import SwiftUI
-import SwiftUICam
-
-struct ContentView: View {
-    var body: some View {
-        NavigationView {
-            VStack {
-              CameraView()
-            }
-        }
-    }
-}
-
-```
-
-### Capture
-
-Add an @ObservedObject UserEvents that will be pass to the interface and the CameraViewRepresentable like this:
+In your SwiftUI view simply add it in like you would any other view, pass it the applicationName and add an @ObservedObject UserEvents that will be pass to the interface and the CameraViewRepresentable like this:
 
 ```
 import SwiftUI
@@ -94,16 +72,27 @@ struct ContentView: View {
     @ObservedObject events = UserEvents()
     var body: some View {
     	ZStack {
-              CameraView(events: events)
+              CameraView(events: events, applicationName: "SwiftUICam")
 	      InterfaceView(events: events)
     	}
     }
 }
 
 ```
+## Interface view
 
 Make your interface view conform to the CameraActions protocol and add the @ObservedObject UserEvents property.
 Add gestures to your buttons that call the CameraActions functions and pass them the UserEvents property, simply as that.
+
+## Customize the CameraView
+
+You can modify several properties of the CameraView on its initialization:
+        - focusImage
+        - preferredStartingCameraType
+        - preferredStartingCameraPosition
+        - pinchToZoom
+        - tapToFocus
+        - doubleTapCameraSwitch
 
 
 ## What's next
