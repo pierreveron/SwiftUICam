@@ -64,7 +64,7 @@ As of iOS 10, Apple requires the additon of the `NSCameraUsageDescription` and `
 
 In your SwiftUI view simply add the CameraView, pass it the applicationName and add an @ObservedObject UserEvents that will be pass to the interface and the CameraViewRepresentable like this:
 
-```
+```swift
 import SwiftUI
 import SwiftUICam
 
@@ -84,6 +84,32 @@ struct ContentView: View {
 
 Make your interface view conform to the CameraActions protocol and add the @ObservedObject UserEvents property.
 Add gestures to your buttons that call the CameraActions functions and pass them the UserEvents property, simply as that.
+```swift
+import SwiftUI
+import SwiftUICam
+
+struct CameraInterfaceView: View, CameraActions {    
+    @ObservedObject var events: UserEvents
+    
+    var body: some View {
+        VStack {
+            HStack {
+                rotateButton().onTapGesture {
+                    self.rotateCamera(events: events)
+                }
+                Spacer()
+                flashButton().onTapGesture {
+                    self.changeFlashMode(events: events)
+                }
+            }
+            Spacer()
+            captureButton().onTapGesture {
+                self.takePhoto(events: events)
+            }
+        }
+    }
+}
+```
 
 ### CameraActions
 
