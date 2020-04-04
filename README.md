@@ -73,7 +73,7 @@ struct ContentView: View {
     var body: some View {
     	ZStack {
               CameraView(events: events, applicationName: "SwiftUICam")
-	      InterfaceView(events: events)
+	      CameraInterfaceView(events: events)
     	}
     }
 }
