@@ -62,7 +62,7 @@ As of iOS 10, Apple requires the additon of the `NSCameraUsageDescription` and `
 
 ### Getting Started:
 
-In your SwiftUI view simply add it in like you would any other view, pass it the applicationName and add an @ObservedObject UserEvents that will be pass to the interface and the CameraViewRepresentable like this:
+In your SwiftUI view simply add the CameraView, pass it the applicationName and add an @ObservedObject UserEvents that will be pass to the interface and the CameraViewRepresentable like this:
 
 ```
 import SwiftUI
@@ -87,12 +87,13 @@ Add gestures to your buttons that call the CameraActions functions and pass them
 ## Customize the CameraView
 
 You can modify several properties of the CameraView on its initialization:
-        - focusImage
-        - preferredStartingCameraType
-        - preferredStartingCameraPosition
-        - pinchToZoom
-        - tapToFocus
-        - doubleTapCameraSwitch
+
+        -focusImage
+        -preferredStartingCameraType
+        -preferredStartingCameraPosition
+        -pinchToZoom
+        -tapToFocus
+        -doubleTapCameraSwitch
 
 
 ## What's next
