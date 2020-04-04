@@ -127,7 +127,9 @@ The methods have a default definition to take make it easy to use.
 ## Customize the CameraView
 
 You can modify several properties of the CameraView on its initialization:
-
+```swift
+init(events: UserEvents, applicationName: String, preferredStartingCameraType: AVCaptureDevice.DeviceType = .builtInWideAngleCamera, preferredStartingCameraPosition: AVCaptureDevice.Position = .back, focusImage: String? = nil, pinchToZoom: Bool = true, tapToFocus: Bool = true, doubleTapCameraSwitch: Bool = true)
+```
 - preferredStartingCameraType
 - preferredStartingCameraPosition
 - tapToFocus
