@@ -103,7 +103,7 @@ CameraView, by default, support tap to focus on the video preview. To disable th
 
 #### FocusImage
 
-When tapToFocus is enable, you can pass an image that will be animate on the tap point.
+When tapToFocus is enable, you can pass an UIImage that will be animate on the tap point.
 
 ### PinchToZoom
 
@@ -115,6 +115,7 @@ By default, CameraView will launch to the back camera. This can be changed by ch
 
 ## What's next
 
+- Give more access to customization (max video duration, video quality, ...)
 - Add support for the device orientation
 - Add background audio support
 - Wait for Apple to release an update of SwiftUI to maybe make it simplier to use AVFoundation
