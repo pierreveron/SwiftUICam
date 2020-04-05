@@ -15,7 +15,7 @@ public protocol CameraActions {
     func changeFlashMode(events: UserEvents)
 }
 
-extension CameraActions {
+public extension CameraActions {
     func takePhoto(events: UserEvents) {
         events.didAskToCapturePhoto = true
     }

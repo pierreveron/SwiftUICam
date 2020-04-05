@@ -465,7 +465,7 @@ public class CameraViewController: UIViewController {
             
             // TODO: check this situation
             switch currentPosition {
-            case .unspecified, .front:
+            case .unspecified, .none, .front:
                 preferredPosition = .back
                 preferredDeviceType = .builtInDualCamera
                 
