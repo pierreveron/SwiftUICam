@@ -30,7 +30,7 @@ iOS 13.0+
 
 It’s inspired by the project SwiftyCam made for UIKit: https://github.com/Awalz/SwiftyCam
 
-### License
+## License
 
 This software is released under the MIT License, see LICENSE.txt.
 
