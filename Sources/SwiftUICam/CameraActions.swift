@@ -24,7 +24,7 @@ public extension CameraActions {
         if events.didAskToRecordVideo {
             events.didAskToStopRecording = true
         } else {
-            events.didAskToRotateCamera = true
+            events.didAskToRecordVideo = true
         }
     }
     
