@@ -30,6 +30,10 @@ iOS 13.0+
 
 It’s inspired by the project SwiftyCam made for UIKit: https://github.com/Awalz/SwiftyCam
 
+## License
+
+This software is released under the MIT License, see LICENSE.txt.
+
 ## Installation
 
 ### Swift Package Manager:
@@ -156,7 +160,6 @@ CameraView, by default, support pinchToZoom on the front and back camera. The ge
 ### DoubleTapCameraSwitch
 
 CameraView, by default, support double tap to switch camera. To disable this feature, pass to the `doubleTapCameraSwitch` property `false`.
-
 
 ## What's next
 

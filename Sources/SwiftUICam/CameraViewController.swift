@@ -4,7 +4,7 @@
 //
 //  Created by Pierre Véron on 31.03.20.
 //  Copyright © 2020 Pierre Véron. All rights reserved.
-//
+//  Copyright (c) 2016, Andrew Walz.
 
 /*
  See LICENSE folder for this sample’s licensing information.
