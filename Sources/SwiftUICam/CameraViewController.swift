@@ -86,7 +86,7 @@ public class CameraViewController: UIViewController {
     public var allowBackgroundAudio = true
     
     /// Specifies the [videoGravity](https://developer.apple.com/reference/avfoundation/avcapturevideopreviewlayer/1386708-videogravity) for the preview layer.
-    public var videoGravity: AVLayerVideoGravity = .resizeAspect
+    public var videoGravity: AVLayerVideoGravity = .resizeAspectFill
     
     /// Sets whether or not video recordings will record audio
     /// Setting to true will prompt user for access to microphone on View Controller launch.
